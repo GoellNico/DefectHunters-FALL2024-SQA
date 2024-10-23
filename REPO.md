@@ -26,5 +26,5 @@ A pre-commit Git hook was implemented as a security step to automatically review
 Useally the pre-commit is not part of the git history. That is the reason that we also created a [install-hooks.sh](/install-hooks.sh) which copy the [pre-commit](/hooks/pre-commit) git hook file form /hooks into .git/hooks/. The user has only make sure that bandit is installed.
 
 In the follwing you can see that git hook with bandit works:
-![Commit Command](/images/5a_pre-commit_with_bandit.png)
+![Commit Command](/images/5a_pre-commit_with_bandit_0.png)
 [Report](/bandit-report.csv)
