@@ -29,3 +29,11 @@ In the following image, you can see that the Git hook works with Bandit:
 ![Commit Command](images/5a_pre-commit_with_bandit_0.png)
 
 Here is the generated report: [bandit-report.csv](/bandit-report.csv)
+
+#### 5.b. Fuzz
+
+#### 5.c. Forensics
+
+#### 5.d. Continuous Integration
+
+### 6. Final Report
