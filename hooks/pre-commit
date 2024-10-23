@@ -10,7 +10,7 @@
 echo "============================="
 echo "Started running Bandit"
 echo "============================="
-bandit -r MLForensics/MLForensics-farzana/ -o securityWeaknesses.csv -a file -f csv
+bandit -r MLForensics/MLForensics-farzana/ -o bandit-report.csv -a file -f csv
 echo "============================="
 echo "Finished Bandit"
 echo "============================="
