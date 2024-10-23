@@ -23,9 +23,9 @@ We successfully unpacked the project and have set up a shared GitHub repository.
 #### 5.a. Git Hook
 A pre-commit Git hook was implemented as a security step to automatically review Python files staged for commit, flagging potential security vulnerabilities. The hook utilizes static analysis with the Bandit tool to identify issues. The result is printed in a file named [bandit-report.csv](/bandit-report.csv).
 
-Usually, the pre-commit hook is not part of the Git history. For this reason, we have also created an install-hooks.sh script, which copies the pre-commit Git hook file from /hooks into .git/hooks/. Users just need to ensure that Bandit is installed.
+Usually, the pre-commit hook is not part of the Git history. For this reason, we have also created an [install-hooks.sh](/install-hooks.sh) script, which copies the [pre-commit](/hooks/pre-commit) Git hook file from /hooks into .git/hooks/. Users just need to ensure that Bandit is installed.
 
 In the following image, you can see that the Git hook works with Bandit:
 ![Commit Command](images/5a_pre-commit_with_bandit_0.png)
 
-Here is the generated report: bandit-report.csv
+Here is the generated report: [bandit-report.csv](/bandit-report.csv)
