@@ -32,9 +32,10 @@ A pre-commit Git hook was implemented as a security step to automatically review
 Usually, the pre-commit hook is not part of the Git history. For this reason, we have also coppied the [pre-commit](5b_hooks/hooks/pre-commit) Git hook file from '.git/hooks/' into '5b_hooks/'. Users need to ensure that Bandit is installed.
 
 In the following image, you can see that the Git hook works with Bandit:
-![Commit Command](5b_hooks/images/5a_pre-commit_with_bandit_0.png)
+![Commit Command](5b_hooks/5a_pre-commit_with_bandit_0.png)
 
 Here is the generated report: [bandit-report.csv](5b_hooks/bandit-report.csv)
+![Commit Command](5b_hooks/5a_pre-commit_result.png)
 
 #### 5.b. Fuzz
 Report describing activities.
