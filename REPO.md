@@ -10,6 +10,12 @@
 - 5.d. Integrate continuous integration with GitHub Actions. (20%)
 6. Report your activities and lessons learned. Put the report in your repo as REPO.md (15%)
 
+### Deliverables
+A repo hosted on GitHub. Name of the repo will be TEAMNAME-FALL2024-SQA
+Full completion of all activities as recorded on the GitHub repository
+Report describing what activities your performed and what you have learned
+Logs and screenshots that show execution of forensics, fuzzing, and static analysis
+
 ----
 
 # Report
@@ -31,9 +37,17 @@ In the following image, you can see that the Git hook works with Bandit:
 Here is the generated report: [bandit-report.csv](5b_hooks/bandit-report.csv)
 
 #### 5.b. Fuzz
+Report describing activities.
+Logs and screenshots that show execution of fuzzing.
 
 #### 5.c. Forensics
+Report describing activities.
+Logs and screenshots that show execution of forensics.
 
 #### 5.d. Continuous Integration
+Report describing activities.
+Logs and screenshots that show execution of static analysis -> codacy
 
 ### 6. Final Report
+Report about what activities we have performed and what we have learned.
+
