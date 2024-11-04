@@ -49,5 +49,6 @@ Report describing activities.
 Logs and screenshots that show execution of static analysis -> codacy
 
 ### 6. Final Report
-Report about what activities we have performed and what we have learned.
+=> Report about what activities we have performed and what we have learned.
 
+In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
