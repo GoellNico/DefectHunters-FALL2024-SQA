@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r /bin/fuzz/requirements.txt
 
       - name: Run Fuzz Tests
         run: python fuzz.py
