@@ -45,12 +45,12 @@ Logs and screenshots that show execution of fuzzing.
 Files altered:
 [git.repo.miner.py](MLForensics/MLForensics-farzana/mining/git.repo.miner.py)
 
-Functions Altered:
-- deleteRepo: Added logging for deletion and errors.
-- makeChunks: Integrated logging for chunk operations.
-- cloneRepo: Replaced print statements with logging.
-- dumpContentIntoFile: Enhanced with logging and error handling.
-- getPythonCount: Added logging for file counts.
+1. deleteRepo - Is about managing repository deletions for data cleanup. Add loggin to track deletions and errors for traceability and debugging.
+2. makeChunks - Is about dividing large lists into smaller chunks for processing. Add loggin to verify chunking and troubleshoot data distribution issues.
+3. cloneRepo - Is about Cloning repositories locally for analysis. Add loggin to monitor successful/failed cloning operations for better oversight.
+4. dumpContentIntoFile - Is about writing data to files. Add loggin to confirm file writing operations and handle errors efficiently.
+5. getPythonCount - Is about counting Python files in directories. Add loggin to document the number of Python files processed for analysis accuracy.
+
 ![Logging1](5c_forensics/Screenshot%202024-11-04%20at%207.42.12%20PM.png)
 ![Logging2](5c_forensics/Screenshot%202024-11-04%20at%208.17.26%20PM.png)
 ![Logging3](5c_forensics/Screenshot%202024-11-04%20at%208.17.41%20PM.png)
@@ -71,10 +71,11 @@ Finally, Codacy gives an overall metric of what kind of errors, issues, or warni
 [Here](.github/workflows/codacy.yml) is the codacy.yaml file that was used to create the necessary Github Action to run Codacy.
 
 ### 6. Final Report
-=> Report about what activities we have performed and what we have learned.
 
 In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
 
-In task 5C, we learned about the use of forensics as a means of tracking the actions of individual methods. This way, we can correctly identify the control flow of the program and properly debug the file/ensure program functionality. 
+In Task 5b, ...
+
+In Task 5c, we explored the use of forensics as a method for logging key code locations. This approach helps us identify critical parts of the code, which is valuable for debugging and understanding unexpected behavior in production. It ensures functionality by making it easier to trace and analyze issues effectively.
 
 In Task 5d, we implemented the Codacy static analysis tool in combination with Github Actions to scan our codebase whenever anything is pushed to our main branch. By implementing this, we are ensuring that our code quality is higher and there are fewer bugs and security issues within our codebase everytime anything is changed. When doing this specific project I learned more syntax with Github Actions and Codacy by implementing it to only scan the source directory.
