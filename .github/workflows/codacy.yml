@@ -1,6 +1,11 @@
 name: Codacy Analysis CLI
 
-on: ["push"]
+on: 
+  push:
+    paths-ignore:
+      - "venv/**"
+      - "5a_hooks/**"
+      - "5d_hooks/**"
 
 jobs:
   codacy-analysis-cli:

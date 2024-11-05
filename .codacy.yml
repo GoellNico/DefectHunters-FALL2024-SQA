@@ -1,6 +1,0 @@
-engines:
-  eslint:
-    exclude_paths:
-      - "venv/**"
-      - "5a_hooks/**"
-      - "5d_hooks/**"
