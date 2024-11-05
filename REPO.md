@@ -53,10 +53,19 @@ dumpContentIntoFile: Enhanced with logging and error handling.
 getPythonCount: Added logging for file counts.
 
 #### 5.d. Continuous Integration
-Report describing activities.
-Logs and screenshots that show execution of static analysis -> codacy
+Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
+
+As you can see here, Codacy ran completely and exited without error.
+![Commit Command](5d_github_actions/codacy_overview.png)
+
+![Commit Command](5d_github_actions/codacy_beginning_logs.png)
+
+Finally, Codacy gives an overall metric of what kind of errors, issues, or warnings there are with the code to ensure that security measures are correctly implemented, as you can see here.
+![Commit Command](5d_github_actions/codacy_ending_metrics_summary.png)
 
 ### 6. Final Report
 => Report about what activities we have performed and what we have learned.
 
 In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
+
+In Task 5d, we implemented the Codacy static analysis tool in combination with Github Actions to scan our codebase whenever anything is pushed to our main branch. By implementing this, we are ensuring that our code quality is higher and there are fewer bugs and security issues within our codebase everytime anything is changed. When doing this specific project I learned more syntax with Github Actions and Codacy by implementing it to only scan the source directory.
