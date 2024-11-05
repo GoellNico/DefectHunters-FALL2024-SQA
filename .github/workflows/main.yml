@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repository Traffic
-        uses: GoellNico/DefectHunters-FALL2024-SQA/repostats@v2.1.0
+        uses: GoellNico/DefectHunters-FALL2024-SQA/repostats
         with:
           format_readme: true
         env:
