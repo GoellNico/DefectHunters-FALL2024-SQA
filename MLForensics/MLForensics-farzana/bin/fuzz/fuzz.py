@@ -1,23 +1,35 @@
 import traceback
 from typing import Any, List
-
 import numpy as np
+import signal
 
 from generation.main import generateUnitTest
 from label_perturbation_attack.knn import euc_dist, predict
 from label_perturbation_attack.main import call_loss, call_prob
 
+# Timeout handler for long-running functions
+class TimeoutException(Exception):
+    pass
 
+def timeout_handler(signum, frame):
+    raise TimeoutException("Function timed out")
+
+signal.signal(signal.SIGALRM, timeout_handler)
+
+# Enhanced fuzz function with console logging
 def fuzz(method, fuzzed_args: List[Any]):
     for args in fuzzed_args:
         try:
+            # Set a timeout for each fuzz test
+            signal.alarm(5)  # Timeout after 5 seconds
             result = method(*args)
+            signal.alarm(0)  # Disable alarm if successful
+            print(f"FUZZ: {method.__name__} PASSED ({result}) with args {args}")
+        except TimeoutException:
+            print(f"FUZZ: {method.__name__} TIMED OUT with args {args}")
         except Exception as exc:
-            print(f"FUZZ: {method.__name__} FAILED")
+            print(f"FUZZ: {method.__name__} FAILED with args {args}")
             traceback.print_exc()
-        else:
-            print(f"FUZZ: {method.__name__} PASSED ({result})")
-
 
 if __name__ == "__main__":
     fuzz_targets = [
@@ -73,5 +85,6 @@ if __name__ == "__main__":
             ]
         )
     ]
+
     for method, fuzzed_args in fuzz_targets:
         fuzz(method, fuzzed_args)
