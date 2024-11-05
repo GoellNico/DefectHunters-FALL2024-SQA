@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r MLForensics/MLForensics-farzana/bin/fuzz/requirements.txt
+          pip install -r GoellNico/MLForensics/MLForensics-farzana/bin/fuzz/requirements.txt
 
       - name: Run Fuzz Tests
-        run: python MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py
+        run: python GoellNico/MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py
