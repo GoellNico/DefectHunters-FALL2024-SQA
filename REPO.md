@@ -68,9 +68,13 @@ Finally, Codacy gives an overall metric of what kind of errors, issues, or warni
 
 [Here](https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11675889498/job/32511215142) is the link for the output of the above run of Codacy.
 
+[Here](.github/workflows/codacy.yml) is the codacy.yaml file that was used to create the necessary Github Action to run Codacy.
+
 ### 6. Final Report
 => Report about what activities we have performed and what we have learned.
 
 In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
+
+In task 5C, we learned about the use of forensics as a means of tracking the actions of individual methods. This way, we can correctly identify the control flow of the program and properly debug the file/ensure program functionality. 
 
 In Task 5d, we implemented the Codacy static analysis tool in combination with Github Actions to scan our codebase whenever anything is pushed to our main branch. By implementing this, we are ensuring that our code quality is higher and there are fewer bugs and security issues within our codebase everytime anything is changed. When doing this specific project I learned more syntax with Github Actions and Codacy by implementing it to only scan the source directory.
