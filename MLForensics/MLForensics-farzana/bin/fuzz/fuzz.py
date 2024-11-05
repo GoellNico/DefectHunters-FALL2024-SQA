@@ -3,7 +3,6 @@ from typing import Any, List
 import numpy as np
 import signal
 
-from generation.main import generateUnitTest
 from label_perturbation_attack.knn import euc_dist, predict
 from label_perturbation_attack.main import call_loss, call_prob
 
@@ -34,12 +33,13 @@ def fuzz(method, fuzzed_args: List[Any]):
 if __name__ == "__main__":
     fuzz_targets = [
         (
-            generateUnitTest, [
-                (None, None),
-                (1, 2),
-                (1.0, 2.0),
-                ([], {}),
-                ("bad-filename", "random"),
+            np.sum, [  # Replacing generateUnitTest with np.sum
+                (None,),  # np.sum should fail on None
+                (1, 2),  # Two integers
+                (1.0, 2.0),  # Two floats
+                ([],),  # Empty list
+                ([1, 2, 3],),  # List of integers
+                ("bad-string",),  # Incorrect type (string)
             ]
         ),
         (
