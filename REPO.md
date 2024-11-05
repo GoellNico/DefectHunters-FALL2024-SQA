@@ -68,6 +68,8 @@ Finally, Codacy gives an overall metric of what kind of errors, issues, or warni
 
 [Here](https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11675889498/job/32511215142) is the link for the output of the above run of Codacy.
 
+![Here](.github/workflows/codacy.yml) is the codacy.yaml file that was used to create the necessary Github Action to run Codacy.
+
 ### 6. Final Report
 => Report about what activities we have performed and what we have learned.
 
