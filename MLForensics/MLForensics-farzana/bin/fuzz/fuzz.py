@@ -1,50 +1,77 @@
-import atheris
-import sys
+import traceback
+from typing import Any, List
 
-# Import the functions you want to fuzz from your project
-# from my_project import function1, function2, function3, function4, function5
+import numpy as np
 
-# Define your fuzzing target
-def TestOneInput(data):
-    # We expect that the fuzzing data will be bytes, so you will need to
-    # convert it to the appropriate format for each function you want to fuzz.
-    # This is a simple template, you can modify the parsing as needed.
+from generation.main import generateUnitTest
+from label_perturbation_attack.knn import euc_dist, predict
+from label_perturbation_attack.main import call_loss, call_prob
 
-    try:
-        # You can convert the data input into different formats
-        # E.g., as strings, ints, or complex objects if needed
-        fdp = atheris.FuzzedDataProvider(data)
 
-        # Example: fuzzing function1 with a string input
-        func1_input = fdp.ConsumeUnicodeNoSurrogates(20)  # Adjust size based on function needs
-        function1(func1_input)
+def fuzz(method, fuzzed_args: List[Any]):
+    for args in fuzzed_args:
+        try:
+            result = method(*args)
+        except Exception as exc:
+            print(f"FUZZ: {method.__name__} FAILED")
+            traceback.print_exc()
+        else:
+            print(f"FUZZ: {method.__name__} PASSED ({result})")
 
-        # Example: fuzzing function2 with an integer input
-        func2_input = fdp.ConsumeInt(4)  # Adjust size if necessary
-        function2(func2_input)
-
-        # Example: fuzzing function3 with a float input
-        func3_input = fdp.ConsumeFloat()
-        function3(func3_input)
-
-        # You can add more function fuzzing based on different inputs
-        # Example: fuzzing function4 with boolean input
-        func4_input = fdp.ConsumeBool()
-        function4(func4_input)
-
-        # Example: fuzzing function5 with binary data
-        func5_input = fdp.ConsumeBytes(50)  # Adjust the length as needed
-        function5(func5_input)
-
-    except Exception as e:
-        # Catch all exceptions to prevent the fuzzer from crashing
-        # Let the fuzzer continue exploring other inputs
-        print(f"Exception occurred during fuzzing: {e}")
-
-# Initialize fuzzing
-def main():
-    atheris.Setup(sys.argv, TestOneInput)
-    atheris.Fuzz()
 
 if __name__ == "__main__":
-    main()
+    fuzz_targets = [
+        (
+            generateUnitTest, [
+                (None, None),
+                (1, 2),
+                (1.0, 2.0),
+                ([], {}),
+                ("bad-filename", "random"),
+            ]
+        ),
+        (
+            euc_dist, [
+                (None, None),
+                ("bad", "args"),
+                ([], {}),
+                (float("inf"), float("inf")),
+                (float("-inf"), float("inf")),
+                (1j, 1),
+                (np.NAN, np.NAN)
+            ]
+        ),
+        (
+            predict, [
+                ([]),
+                (None, 0),
+                (None, 1.0),
+                (None, "bad-iterable"),
+                (None, [None, None, None]),
+                (None, []),
+                (None, np.zeros((1, 50))),
+            ]
+        ),
+        (
+            call_loss, [
+                (None,),
+                (0,),
+                (1.0,),
+                ([],),
+                ({},),
+                ("bad-model-name",),
+            ]
+        ),
+        (
+            call_prob, [
+                (0, 0, None,),
+                (None, None, 0,),
+                ("doesnt", "matter", 1.0,),
+                (float("-inf"), float("inf"), [],),
+                ([], [], {},),
+                ([], [], "bad-model-name",),
+            ]
+        )
+    ]
+    for method, fuzzed_args in fuzz_targets:
+        fuzz(method, fuzzed_args)
