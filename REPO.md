@@ -45,21 +45,11 @@ Logs and screenshots that show execution of fuzzing.
 Files altered:
 [git.repo.miner.py](MLForensics/MLForensics-farzana/mining/git.repo.miner.py)
 
-1. deleteRepo
-  Interest: Manages repository deletions for data cleanup.
-  Logging Added: To track deletions and errors for traceability and debugging.
-2. makeChunks
-  Interest: Divides large lists into smaller chunks for processing.
-  Logging Added: To verify chunking and troubleshoot data distribution issues.
-3. cloneRepo
-  Interest: Clones repositories locally for analysis.
-  Logging Added: To monitor successful/failed cloning operations for better oversight.
-4. dumpContentIntoFile
-  Interest: Writes data to files.
-  Logging Added: To confirm file writing operations and handle errors efficiently.
-5. getPythonCount
-  Interest: Counts Python files in directories.
-  Logging Added: To document the number of Python files processed for analysis accuracy.
+1. deleteRepo - Manages repository deletions for data cleanup. To track deletions and errors for traceability and debugging.
+2. makeChunks - Divides large lists into smaller chunks for processing. To verify chunking and troubleshoot data distribution issues.
+3. cloneRepo - Clones repositories locally for analysis. To monitor successful/failed cloning operations for better oversight.
+5. dumpContentIntoFile - Writes data to files. To confirm file writing operations and handle errors efficiently.
+6. getPythonCount - Counts Python files in directories. To document the number of Python files processed for analysis accuracy.
 
 ![Logging1](5c_forensics/Screenshot%202024-11-04%20at%207.42.12%20PM.png)
 ![Logging2](5c_forensics/Screenshot%202024-11-04%20at%208.17.26%20PM.png)
