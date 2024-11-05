@@ -3,6 +3,7 @@ from typing import Any, List
 import numpy as np
 import pandas as pd
 import signal
+import ast
 
 # Functions to fuzz
 def getFileLength(file_):
