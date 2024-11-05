@@ -51,6 +51,9 @@ Functions Altered:
 - cloneRepo: Replaced print statements with logging.
 - dumpContentIntoFile: Enhanced with logging and error handling.
 - getPythonCount: Added logging for file counts.
+![Logging1](5c_forensics/Screenshot%202024-11-04%20at%207.42.12%20PM.png)
+![Logging2](5c_forensics/Screenshot%202024-11-04%20at%208.17.26%20PM.png)
+![Logging3](5c_forensics/Screenshot%202024-11-04%20at%208.17.41%20PM.png)
 
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
