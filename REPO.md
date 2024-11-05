@@ -46,11 +46,11 @@ Files altered:
 [git.repo.miner.py](MLForensics/MLForensics-farzana/mining/git.repo.miner.py)
 
 Functions Altered:
-deleteRepo: Added logging for deletion and errors.
-makeChunks: Integrated logging for chunk operations.
-cloneRepo: Replaced print statements with logging.
-dumpContentIntoFile: Enhanced with logging and error handling.
-getPythonCount: Added logging for file counts.
+- deleteRepo: Added logging for deletion and errors.
+- makeChunks: Integrated logging for chunk operations.
+- cloneRepo: Replaced print statements with logging.
+- dumpContentIntoFile: Enhanced with logging and error handling.
+- getPythonCount: Added logging for file counts.
 
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
