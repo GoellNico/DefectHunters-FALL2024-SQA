@@ -4,8 +4,63 @@ import numpy as np
 import pandas as pd
 import signal
 
-from empirical.dataset.stats import getFileLength, getAllFileCount
-from FAME-ML.py_parser import getPythonExcepts, func_def_log_check, getAllSLOC
+# Functions to fuzz
+def getFileLength(file_):
+    return sum(1 for line in open(file_, encoding='latin-1'))
+
+def getAllFileCount(df_):
+    tot_fil_size = 0 
+    file_names_ = np.unique(df_['FILE_FULL_PATH'].tolist())
+    for file_ in file_names_:
+        tot_fil_size = tot_fil_size + getFileLength(file_)
+    return tot_fil_size, len(file_names_)
+
+def getAllSLOC(df_param, csv_encoding='latin-1'):
+    total_sloc = 0
+    all_files = np.unique(df_param['FILE_FULL_PATH'].tolist())
+    for file_ in all_files:
+        total_sloc = total_sloc + sum(1 for line in open(file_, encoding=csv_encoding))
+    return total_sloc
+
+def checkLoggingPerData(tree_object, name2track):
+    LOGGING_EXISTS_FLAG = False 
+    IMPORT_FLAG, FUNC_FLAG, ARG_FLAG  = False, False , False 
+    for stmt_ in tree_object.body:
+        for node_ in ast.walk(stmt_):
+            if isinstance(node_, ast.Import):
+                funcDict = node_.__dict__     
+                import_name_objects = funcDict[constants.NAMES_KW]
+                for obj in import_name_objects:
+                    if constants.LOGGING_KW in obj.__dict__[constants.NAME_KW]: 
+                        IMPORT_FLAG = True 
+    func_decl_list = getPythonAtrributeFuncs(tree_object)
+    for func_decl_ in func_decl_list:
+        func_parent_id, func_name, funcLineNo, call_arg_list = func_decl_ 
+        if constants.LOGGING_KW in func_parent_id or constants.LOGGING_KW in func_name: 
+            FUNC_FLAG = True 
+            for arg_ in call_arg_list:
+                if name2track in arg_:
+                    ARG_FLAG = True 
+    if IMPORT_FLAG and FUNC_FLAG and ARG_FLAG:
+        LOGGING_EXISTS_FLAG = True 
+    return LOGGING_EXISTS_FLAG 
+
+def func_def_log_check(func_decl_list):
+    FUNC_FLAG = False 
+    for func_decl_ in func_decl_list:
+        func_parent_id, func_name, funcLineNo, call_arg_list = func_decl_
+        if constants.LOGGING_KW in func_parent_id or constants.LOGGING_KW in func_name: 
+            FUNC_FLAG = True         
+    return FUNC_FLAG 
+
+def getPythonExcepts(pyTreeObj): 
+    except_body_as_list = []
+    for stmt_ in pyTreeObj.body:
+        for node_ in ast.walk(stmt_):
+            if isinstance(node_, ast.ExceptHandler): 
+                exceptDict = node_.__dict__     
+                except_body_as_list = exceptDict[constants.BODY_KW]  
+    return except_body_as_list
 
 # Timeout handler for long-running functions
 class TimeoutException(Exception):
