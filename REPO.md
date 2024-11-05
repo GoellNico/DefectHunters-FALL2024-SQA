@@ -39,7 +39,18 @@ Here is the generated report: [bandit-report.csv](5a_hooks/bandit-report.csv)
 
 #### 5.b. Fuzz
 Report describing activities.
-Logs and screenshots that show execution of fuzzing.
+Logs and screenshots that show execution of fuzzing within (5b_fuzzing). 9 screenshots:
+1. 5b_fuzzing\5b screenshot 1.PNG
+2. 5b_fuzzing\5b screenshot 2.PNG
+3. 5b_fuzzing\5b screenshot 3.PNG
+4. 5b_fuzzing\5b screenshot 4.PNG
+5. 5b_fuzzing\5b screenshot 5.PNG
+6. 5b_fuzzing\5b screenshot 6.PNG
+7. 5b_fuzzing\5b screenshot 7.PNG
+8. 5b_fuzzing\5b screenshot 8.PNG
+9. 5b_fuzzing\5b screenshot 9.PNG
+
+Succesful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430055
 
 #### 5.c. Forensics
 Files altered:
@@ -74,7 +85,7 @@ Finally, Codacy gives an overall metric of what kind of errors, issues, or warni
 
 In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
 
-In Task 5b, ...
+In Task 5b, we implemented a fuzzing method in our code that fuzzed 5 of our methods. Which with a python and yaml files added with a new Github action, we were able to log how our methods performed. This is very helpful in programming with the natural of unexpected values coming up in our methods.
 
 In Task 5c, we explored the use of forensics as a method for logging key code locations. This approach helps us identify critical parts of the code, which is valuable for debugging and understanding unexpected behavior in production. It ensures functionality by making it easier to trace and analyze issues effectively.
 
