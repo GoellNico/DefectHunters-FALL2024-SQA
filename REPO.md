@@ -38,19 +38,22 @@ Here is the generated report: [bandit-report.csv](5a_hooks/bandit-report.csv)
 ![Commit Command](5a_hooks/5a_pre-commit_result.png)
 
 #### 5.b. Fuzz
-Report describing activities.
-Logs and screenshots that show execution of fuzzing within (5b_fuzzing). 9 screenshots:
-1. 5b_fuzzing\5b screenshot 1.PNG
-2. 5b_fuzzing\5b screenshot 2.PNG
-3. 5b_fuzzing\5b screenshot 3.PNG
-4. 5b_fuzzing\5b screenshot 4.PNG
-5. 5b_fuzzing\5b screenshot 5.PNG
-6. 5b_fuzzing\5b screenshot 6.PNG
-7. 5b_fuzzing\5b screenshot 7.PNG
-8. 5b_fuzzing\5b screenshot 8.PNG
-9. 5b_fuzzing\5b screenshot 9.PNG
+Screenshots that show execution of fuzzing within 9 screenshots
+[!logging](5b_fuzzing/5b screenshot 1.PNG)
+[!logging](5b_fuzzing/5b screenshot 2.PNG)
+[!logging](5b_fuzzing/5b screenshot 3.PNG)
+[!logging](5b_fuzzing\5b screenshot 4.PNG)
+[!logging](5b_fuzzing\5b screenshot 5.PNG)
+[!logging](5b_fuzzing\5b screenshot 6.PNG)
+[!logging](5b_fuzzing\5b screenshot 7.PNG)
+[!logging](5b_fuzzing\5b screenshot 8.PNG)
+[!logging](5b_fuzzing\5b screenshot 9.PNG)
 
-Succesful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430055
+Fuzzing implementation found in
+YAML File: \.github\workflows\fuzz.yml
+Python: MLForensics\MLForensics-farzana\bin\fuzz\fuzz.py
+
+Successful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430055
 
 #### 5.c. Forensics
 Files altered:
