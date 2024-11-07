@@ -38,22 +38,35 @@ Here is the generated report: [bandit-report.csv](5a_hooks/bandit-report.csv)
 ![Commit Command](5a_hooks/5a_pre-commit_result.png)
 
 #### 5.b. Fuzz
-Screenshots that show execution of fuzzing within 9 screenshots
+Methods used:
+1. getFileLength (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
+- Chosen because of method simplicity made it easier to test and fuzz
+- Inputs include an invalid file, a none data type, invalid file name, and an empty string for a file name
+2. getAllFileCount (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
+- Chosen because of empirical nature and simplicity of the method
+- Inputs include an empty dataframe, path to a nonexistentent file, an invalid encoding, and a none data type
+3. getAllSLOC (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
+- Chosen to test how fuzzing would work with the encoding scheme
+- Inputs include an empty dataframe, a nonexistent file with UTF-8 encoding, an invalid encoding, and a none data type
+4. checkLoggingPerData (from MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
+- Chosen to test how logging would work with fuzzing
+- Inputs include a simple import, a none tree, an empty input, and a none data type
+5. func_def_log_check (MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
+- Chosen to fuzz declaration logging lists
+- Inputs include a list with logging, a non-logging function with a logging argument, an empty input, and a none data type
+6. getPythonExcepts (MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
+- Chosen to see how fuzzing would handle these exceptions
+- Inputs include a try exception, a none in the ast value, a tree with no exceptions, and a specific exception
+
+Screenshots that show execution of fuzzing within 2 screenshots
 [!logging](5b_fuzzing/5b screenshot 1.PNG)
 [!logging](5b_fuzzing/5b screenshot 2.PNG)
-[!logging](5b_fuzzing/5b screenshot 3.PNG)
-[!logging](5b_fuzzing\5b screenshot 4.PNG)
-[!logging](5b_fuzzing\5b screenshot 5.PNG)
-[!logging](5b_fuzzing\5b screenshot 6.PNG)
-[!logging](5b_fuzzing\5b screenshot 7.PNG)
-[!logging](5b_fuzzing\5b screenshot 8.PNG)
-[!logging](5b_fuzzing\5b screenshot 9.PNG)
 
 Fuzzing implementation found in
-YAML File: \.github\workflows\fuzz.yml
-Python: MLForensics\MLForensics-farzana\bin\fuzz\fuzz.py
+YAML File: (.github/workflows/fuzz.yml)
+Python: (MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py)
 
-Successful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430055
+Successful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430049
 
 #### 5.c. Forensics
 Files altered:
