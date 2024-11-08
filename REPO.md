@@ -43,12 +43,12 @@ YAML File: [fuzz.yml](.github/workflows/fuzz.yml) \
 Python: [fuzz.py](MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py)
 
 Methods used:
-1. getFileLength (from [dataset.stats.py](MLForensics\MLForensics-farzana\empirical\dataset.stats.py)): Inputs include an invalid file, a none data type, invalid file name, and an empty string for a file name
-2. getAllFileCount (from [dataset.stats.py](MLForensics\MLForensics-farzana\empirical\dataset.stats.py)): Inputs include an empty dataframe, path to a non existence file, an invalid encoding, and a none data type
-3. getAllSLOC (from [dataset.stats.py](MLForensics\MLForensics-farzana\empirical\dataset.stats.py)): Inputs include an empty dataframe, a nonexistent file with UTF-8 encoding, an invalid encoding, and a none data type
-4. checkLoggingPerData (from [py_parser.py](MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)): Inputs include a simple import, a none tree, an empty input, and a none data type
-5. func_def_log_check (from [py_parser.py](MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)): Inputs include a list with logging, a non-logging function with a logging argument, an empty input, and a none data type
-6. getPythonExcepts (from [py_parser.py](MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)): Inputs include a try exception, a none in the ast value, a tree with no exceptions, and a specific exception
+1. getFileLength (from [dataset.stats.py](MLForensics/MLForensics-farzana/empirical/dataset.stats.py)): Inputs include an invalid file, a none data type, invalid file name, and an empty string for a file name
+2. getAllFileCount (from [dataset.stats.py](MLForensics/MLForensics-farzana/empirical/dataset.stats.py)): Inputs include an empty dataframe, path to a non existence file, an invalid encoding, and a none data type
+3. getAllSLOC (from [dataset.stats.py](MLForensics/MLForensics-farzana/empirical/dataset.stats.py)): Inputs include an empty dataframe, a nonexistent file with UTF-8 encoding, an invalid encoding, and a none data type
+4. checkLoggingPerData (from [py_parser.py](MLForensics/MLForensics-farzana/FAME-ML/py_parser.py)): Inputs include a simple import, a none tree, an empty input, and a none data type
+5. func_def_log_check (from [py_parser.py](MLForensics/MLForensics-farzana/FAME-ML/py_parser.py)): Inputs include a list with logging, a non-logging function with a logging argument, an empty input, and a none data type
+6. getPythonExcepts (from [py_parser.py](MLForensics/MLForensics-farzana/FAME-ML/py_parser.py)): Inputs include a try exception, a none in the ast value, a tree with no exceptions, and a specific exception
 
 Screenshots that show execution of fuzzing: \
 ![logging_1](5b_fuzzing/5b_screenshot_1.PNG)
