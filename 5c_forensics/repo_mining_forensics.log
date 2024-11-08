@@ -1,0 +1,49 @@
+2024-11-07 23:26:48,850 [INFO] - Running main.py
+2024-11-07 23:26:48,850 [INFO] - Starting main.py demonstration
+2024-11-07 23:26:48,850 [INFO] - Testing cloneRepo function
+2024-11-07 23:26:48,850 [INFO] - Cloning repo: https://github.com/example/repo.git into test_repo
+2024-11-07 23:26:49,107 [WARNING] - Skipping repo due to cloning issue: https://github.com/example/repo.git - Command '['bash', '-c', 'git clone https://github.com/example/repo.git test_repo']' returned non-zero exit status 128.
+2024-11-07 23:26:49,107 [INFO] - Testing getPythonCount function
+2024-11-07 23:26:49,107 [DEBUG] - Counting Python files in test_repo
+2024-11-07 23:26:49,107 [INFO] - Python file count in test_repo: 0
+2024-11-07 23:26:49,107 [INFO] - Testing dumpContentIntoFile function
+2024-11-07 23:26:49,107 [INFO] - Dumping content into test_output.txt
+2024-11-07 23:26:49,107 [INFO] - File test_output.txt size after dumping: 27 bytes
+2024-11-07 23:26:49,107 [INFO] - Testing deleteRepo function
+2024-11-07 23:26:49,107 [INFO] - Deleting test_repo due to TEST_DELETION
+2024-11-07 23:26:49,107 [INFO] - Testing makeChunks function
+2024-11-07 23:26:49,107 [DEBUG] - Splitting list into chunks of size 5
+2024-11-07 23:26:49,107 [INFO] - main.py demonstration completed
+2024-11-07 23:26:49,107 [INFO] - main.py execution finished
+2024-11-07 23:26:58,581 [INFO] - Running main.py
+2024-11-07 23:26:58,581 [INFO] - Starting main.py demonstration
+2024-11-07 23:26:58,582 [INFO] - Testing cloneRepo function
+2024-11-07 23:26:58,582 [INFO] - Cloning repo: https://github.com/example/repo.git into test_repo
+2024-11-07 23:26:58,803 [WARNING] - Skipping repo due to cloning issue: https://github.com/example/repo.git - Command '['bash', '-c', 'git clone https://github.com/example/repo.git test_repo']' returned non-zero exit status 128.
+2024-11-07 23:26:58,804 [INFO] - Testing getPythonCount function
+2024-11-07 23:26:58,804 [DEBUG] - Counting Python files in test_repo
+2024-11-07 23:26:58,804 [INFO] - Python file count in test_repo: 0
+2024-11-07 23:26:58,804 [INFO] - Testing dumpContentIntoFile function
+2024-11-07 23:26:58,804 [INFO] - Dumping content into test_output.txt
+2024-11-07 23:26:58,804 [INFO] - File test_output.txt size after dumping: 27 bytes
+2024-11-07 23:26:58,804 [INFO] - Testing deleteRepo function
+2024-11-07 23:26:58,804 [INFO] - Deleting test_repo due to TEST_DELETION
+2024-11-07 23:26:58,804 [INFO] - Testing makeChunks function
+2024-11-07 23:26:58,804 [DEBUG] - Splitting list into chunks of size 5
+2024-11-07 23:26:58,804 [INFO] - main.py demonstration completed
+2024-11-07 23:26:58,804 [INFO] - main.py execution finished
+2024-11-07 23:27:24,072 [INFO] - Running main.py
+2024-11-07 23:27:24,072 [INFO] - Starting main.py demonstration
+2024-11-07 23:27:24,072 [INFO] - Testing getPythonCount function
+2024-11-07 23:27:24,072 [DEBUG] - Counting Python files in test_repo
+2024-11-07 23:27:24,073 [INFO] - Python file count in test_repo: 1
+2024-11-07 23:27:24,073 [INFO] - Testing dumpContentIntoFile function
+2024-11-07 23:27:24,073 [INFO] - Dumping content into test_output.txt
+2024-11-07 23:27:24,073 [INFO] - File test_output.txt size after dumping: 27 bytes
+2024-11-07 23:27:24,073 [INFO] - Testing deleteRepo function
+2024-11-07 23:27:24,073 [INFO] - Deleting test_repo due to TEST_DELETION
+2024-11-07 23:27:24,073 [INFO] - Successfully deleted test_repo
+2024-11-07 23:27:24,073 [INFO] - Testing makeChunks function
+2024-11-07 23:27:24,073 [DEBUG] - Splitting list into chunks of size 5
+2024-11-07 23:27:24,073 [INFO] - main.py demonstration completed
+2024-11-07 23:27:24,073 [INFO] - main.py execution finished
