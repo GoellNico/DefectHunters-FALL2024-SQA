@@ -38,6 +38,10 @@ Here is the generated report: [bandit-report.csv](5a_hooks/bandit-report.csv)
 ![Commit Command](5a_hooks/5a_pre-commit_result.png)
 
 #### 5.b. Fuzz
+The fuzzing implementation can be found in: \
+YAML File: [fuzz.yml](.github/workflows/fuzz.yml) \
+Python: [fuzz.py](MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py)
+
 Methods used:
 1. getFileLength (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
 - Chosen because of method simplicity made it easier to test and fuzz
@@ -68,19 +72,15 @@ Methods used:
 - Passed try, tree with no exceptions, and specific exception case
 - Failed none data type
 
-Screenshots that show execution of fuzzing within 2 screenshots
-[!logging](5b_fuzzing/5b screenshot 1.PNG)
-[!logging](5b_fuzzing/5b screenshot 2.PNG)
+Screenshots that show execution of fuzzing: \
+![logging_1](5b_fuzzing/5b_screenshot_1.PNG)
+![logging_2](5b_fuzzing/5b_screenshot_2.PNG)
 
-Fuzzing implementation found in
-YAML File: (.github/workflows/fuzz.yml)
-Python: (MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py)
-
-Successful run seen here: https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430049
+Successful run seen here: [runs/11677430049](https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11677430049)
 
 #### 5.c. Forensics
 Files altered:
-[git.repo.miner.py](MLForensics/MLForensics-farzana/mining/git.repo.miner.py)
+[repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py)
 
 1. deleteRepo - Is about managing repository deletions for data cleanup. Add loggin to track deletions and errors for traceability and debugging.
 2. makeChunks - Is about dividing large lists into smaller chunks for processing. Add loggin to verify chunking and troubleshoot data distribution issues.
@@ -88,9 +88,11 @@ Files altered:
 4. dumpContentIntoFile - Is about writing data to files. Add loggin to confirm file writing operations and handle errors efficiently.
 5. getPythonCount - Is about counting Python files in directories. Add loggin to document the number of Python files processed for analysis accuracy.
 
-![Logging1](5c_forensics/Screenshot%202024-11-04%20at%207.42.12%20PM.png)
-![Logging2](5c_forensics/Screenshot%202024-11-04%20at%208.17.26%20PM.png)
-![Logging3](5c_forensics/Screenshot%202024-11-04%20at%208.17.41%20PM.png)
+![Logging1](5c_forensics/LoggingCode1.png)
+![Logging1](5c_forensics/LoggingCode2.png)
+![Logging1](5c_forensics/LoggingCode3.png)
+![Logging1](5c_forensics/LoggingEvidence.png)
+[Here](5c_forensics/repo_mining_forensics.log) you can find the logs.
 
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
