@@ -42,21 +42,31 @@ Methods used:
 1. getFileLength (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
 - Chosen because of method simplicity made it easier to test and fuzz
 - Inputs include an invalid file, a none data type, invalid file name, and an empty string for a file name
+- Failed all 4 inputs
 2. getAllFileCount (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
 - Chosen because of empirical nature and simplicity of the method
 - Inputs include an empty dataframe, path to a nonexistentent file, an invalid encoding, and a none data type
+- Passed empty dataframe
+- Failed the other 3
 3. getAllSLOC (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
 - Chosen to test how fuzzing would work with the encoding scheme
 - Inputs include an empty dataframe, a nonexistent file with UTF-8 encoding, an invalid encoding, and a none data type
+- Passed with empty dataframe
+- Failed with other 3 inputs
 4. checkLoggingPerData (from MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
 - Chosen to test how logging would work with fuzzing
 - Inputs include a simple import, a none tree, an empty input, and a none data type
+- Failed all 4 inputs
 5. func_def_log_check (MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
 - Chosen to fuzz declaration logging lists
 - Inputs include a list with logging, a non-logging function with a logging argument, an empty input, and a none data type
+- Passed the first three args
+- Failed none data type input
 6. getPythonExcepts (MLForensics\MLForensics-farzana\FAME-ML\py_parser.py)
 - Chosen to see how fuzzing would handle these exceptions
 - Inputs include a try exception, a none in the ast value, a tree with no exceptions, and a specific exception
+- Passed try, tree with no exceptions, and specific exception case
+- Failed none data type
 
 Screenshots that show execution of fuzzing within 2 screenshots
 [!logging](5b_fuzzing/5b screenshot 1.PNG)
