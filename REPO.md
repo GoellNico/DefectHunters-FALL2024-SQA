@@ -110,7 +110,7 @@ As you can see here, Codacy ran completely and exited without error:
 
 ![Commit Command](5d_github_actions/codacy_beginning_logs.png)
 
-Finally, Codacy gives an overall metric of what kind of errors, issues, or warnings there are with the code to ensure that security measures are correctly implemented, as you can see here.
+Finally, Codacy gives an overall metric of what kind of errors, issues, or warnings there are with the code to ensure that security measures are correctly implemented, as you can see here:
 ![Commit Command](5d_github_actions/codacy_ending_metrics_summary.png)
 
 [Here](https://github.com/GoellNico/DefectHunters-FALL2024-SQA/actions/runs/11675889498/job/32511215142) is the link for the output of the above run of Codacy.
