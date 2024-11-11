@@ -100,7 +100,7 @@ Additions:
 ![Logging1](5c_forensics/LoggingEvidence.png)
 [Here](5c_forensics/repo_mining_forensics.log) you can find the logs.
 
-To execute, simply run "python3 main.py" in [LForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining) folder and find "repo_mining_forensics.py" within the same directory as [main.py](MLForensics/MLForensics-farzana/mining/main.py) and [repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py) ([LForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining)).
+To execute, simply run "python3 main.py" in [MLForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining) folder and find "repo_mining_forensics.py" within the same directory as [main.py](MLForensics/MLForensics-farzana/mining/main.py) and [repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py) ([MLForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining)).
 
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
