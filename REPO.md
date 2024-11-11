@@ -44,7 +44,7 @@ The fuzzing implementation can be found in: \
 YAML File: [fuzz.yml](.github/workflows/fuzz.yml) \
 Python: [fuzz.py](MLForensics/MLForensics-farzana/bin/fuzz/fuzz.py)
 
-Methods used:
+Methods used (6 instead of 5):
 1. getFileLength (from MLForensics\MLForensics-farzana\empirical\dataset.stats.py)
 - Chosen because of method simplicity made it easier to test and fuzz
 - Inputs include an invalid file, a none data type, invalid file name, and an empty string for a file name
@@ -121,7 +121,7 @@ Finally, Codacy gives an overall metric of what kind of errors, issues, or warni
 
 In Task 5a, we implemented a pre-commit Git hook, demonstrating how straightforward it is to add hooks that enhance code quality. For instance, we used static code analysis to automatically test changes before they are committed, reducing the risk of unknowingly introducing bugs. This approach ensures a higher quality standard for the main/master branch.
 
-In Task 5b, we implemented a fuzzing method in our code that fuzzed 5 of our methods. Which with a python and yaml files added with a new Github action, we were able to log how our methods performed. This is very helpful in programming with the natural of unexpected values coming up in our methods.
+In Task 5b, we implemented a fuzzing method in our code that fuzzed 6 of our methods. Which with a python and yaml files added with a new Github action, we were able to log how our methods performed. This is very helpful in programming with the natural of unexpected values coming up in our methods.
 
 In Task 5c, we explored the use of forensics as a method for logging key code locations. This approach helps us identify critical parts of the code, which is valuable for debugging and understanding unexpected behavior in production. It ensures functionality by making it easier to trace and analyze issues effectively.
 
