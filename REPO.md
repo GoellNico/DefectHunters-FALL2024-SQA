@@ -80,10 +80,10 @@ Successful run seen here: [runs/11677430049](https://github.com/GoellNico/Defect
 
 #### 5.c. Forensics
 Files altered:
-[repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py)
-Note: This file was orignially called git.repo.miner.py. The name was altered in order to resolve issues regarding importing functions into our test file main.py. 
+[repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py) \
+Note: This file was orignially called git.repo.miner.py. The name was altered in order to resolve issues regarding importing functions into our test file [main.py](MLForensics/MLForensics-farzana/mining/main.py). 
 
-All logging is tested within main.py in order to isolate and run the individual functions that include logging for debugging purposes. This file feeds all log output into a file entitled repo_mining_forensics.log, present within the same directory as repo_mining.py.
+All logging is tested within [main.py](MLForensics/MLForensics-farzana/mining/main.py) in order to isolate and run the individual functions that include logging for debugging purposes. This file feeds all log output from [repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py) into a file entitled [repo_mining_forensics.log](5c_forensics/repo_mining_forensics.log).
 
 Additions:
 1. deleteRepo - Is about managing repository deletions for data cleanup. Add loggin to track deletions and errors for traceability and debugging.
@@ -98,7 +98,7 @@ Additions:
 ![Logging1](5c_forensics/LoggingEvidence.png)
 [Here](5c_forensics/repo_mining_forensics.log) you can find the logs.
 
-To execute, simply run "python3 main.py" and find "repo_mining_forensics.py" within the same directory as main.py and repo_mining.py (MLForensics/MLForensics-farzana/mining).
+To execute, simply run "python3 main.py" in [LForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining) folder and find "repo_mining_forensics.py" within the same directory as [main.py](MLForensics/MLForensics-farzana/mining/main.py) and [repo_miner.py](MLForensics/MLForensics-farzana/mining/repo_miner.py) ([LForensics/MLForensics-farzana/mining](MLForensics/MLForensics-farzana/mining)).
 
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
