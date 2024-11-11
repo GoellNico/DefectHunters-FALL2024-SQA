@@ -105,7 +105,7 @@ To execute, simply run "python3 main.py" in [MLForensics/MLForensics-farzana/min
 #### 5.d. Continuous Integration
 Github Actions were utilized along with the Codacy static analysis tools to help with continuous integration and maintaining code quality. Utilizing a .yml file in the .github/workflows/ directory, we were able to add Codacy to scan through the source code.
 
-As you can see here, Codacy ran completely and exited without error.
+As you can see here, Codacy ran completely and exited without error:
 ![Commit Command](5d_github_actions/codacy_overview.png)
 
 ![Commit Command](5d_github_actions/codacy_beginning_logs.png)
