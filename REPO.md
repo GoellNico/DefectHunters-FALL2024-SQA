@@ -22,6 +22,8 @@ Logs and screenshots that show execution of forensics, fuzzing, and static analy
 ### Project Objective
 The objective of this project is to integrate software quality assurance activities into an existing Python project "MLForensics". Whatever we learned from our workshops will be integrated in the project.
 
+Our team uses different operating systems, so we utilized virtual environments (venv) to simplify the installation process across platforms ([/venv](venv)).
+
 ### Task 1-4
 We successfully unpacked the project and have set up a shared GitHub repository. The link to the repository is available in the shared signup sheet under the name "Defect Hunters". Additionally, a README.md file is included, which contains our team name and a list of team members.
 
